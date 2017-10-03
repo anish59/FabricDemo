@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FabricDemo</string>
+    <string name="com.pubnub.publishKey" translatable="false">pub-c-4da03156-aa2c-471e-9701-991f8d945d0d</string>
+    <string name="com.pubnub.secretKey" translatable="false">sec-c-OTdjODkyMTAtNGExMy00ZjdkLTg0ZGYtYzAyYTNmYTY1ODU4</string>
+    <string name="com.pubnub.subscribeKey" translatable="false">sub-c-38c8e2e8-9c53-11e7-9459-a6ab0a2df6ac</string>
+    <string name="com.appsee.apikey" translatable="false">3cebd0390df44b078df4fb75e90c7ff1</string>
+    <string name="io.branch.apiKey" translatable="false">key_live_pizQnKdrXrIw79igD8eNglhbAAmJZ9cY</string>
+    <string name="share_link">Share Link</string>
+    <string name="com.mapbox.mapboxsdk.accessToken" translatable="false">pk.eyJ1IjoiY2o4OXFldTRoMDZwbjMzcHVsMDFxNXd6dSIsImEiOiJjajhiNnZ3aXYwbW5kMzNwOG05a3RtZDRnIn0._ikpsyQ3lxKfgZjCoUDjLQ</string>
+    <string name="set_marker">Set Marker</string>
+    <string name="set_polyline">set polyLine</string>
+    <string name="set_route">Set route</string>
+    <!--<string name="com.mapbox.mapboxsdk.accessToken" translatable="false">pk.eyJ1IjoiY2o4OXFldTRoMDZwbjMzcHVsMDFxNXd6dSIsImEiOiJjajg5cWV3bXMwNnBzMzNwdXhmYjVhdXduIn0.dyTt0pFnvoSpz9ApKJdUhQ</string>-->
+
+</resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "556075337511",
+    "firebase_url": "https://pubnubdemo-181106.firebaseio.com",
+    "project_id": "pubnubdemo-181106",
+    "storage_bucket": "pubnubdemo-181106.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556075337511:android:8f8b4173ce8e5cb7",
+        "android_client_info": {
+          "package_name": "com.fabricdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556075337511-ma5u5f7ftu6qg27h9294cqlnhlorknu1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByCnPQLfk_etNyOFszBv2AOdInjkxCt8I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
