@@ -8,8 +8,12 @@
     <string name="share_link">Share Link</string>
     <string name="com.mapbox.mapboxsdk.accessToken" translatable="false">pk.eyJ1IjoiY2o4OXFldTRoMDZwbjMzcHVsMDFxNXd6dSIsImEiOiJjajhiNnZ3aXYwbW5kMzNwOG05a3RtZDRnIn0._ikpsyQ3lxKfgZjCoUDjLQ</string>
     <string name="set_marker">Set Marker</string>
-    <string name="set_polyline">set polyLine</string>
+    <string name="set_polyline">set polyline</string>
+    <string name="set_polygon">set polygon</string>
     <string name="set_route">Set route</string>
+    <string name="com_optimizely_api_key" translatable="false">AANlBDUBcVuak0a4ryLXz-fURdLO3cHz~8905164942:PblRWNy20</string>
+    <string name="my_location">My Location</string>
+    <string name="set_navigation">Set Navigation</string>
     <!--<string name="com.mapbox.mapboxsdk.accessToken" translatable="false">pk.eyJ1IjoiY2o4OXFldTRoMDZwbjMzcHVsMDFxNXd6dSIsImEiOiJjajg5cWV3bXMwNnBzMzNwdXhmYjVhdXduIn0.dyTt0pFnvoSpz9ApKJdUhQ</string>-->
 
 </resources>

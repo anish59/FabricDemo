@@ -1,6 +1,7 @@
 package com.fabricdemo.mapDemo;
 
 
+import android.Manifest;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.fabricdemo.R;
+import com.fabricdemo.helper.FunctionHelper;
+import com.gun0912.tedpermission.PermissionListener;
 import com.mapbox.directions.DirectionsCriteria;
 import com.mapbox.directions.MapboxDirections;
 import com.mapbox.directions.service.models.DirectionsResponse;
@@ -25,6 +28,8 @@ import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.annotations.MarkerViewOptions;
 import com.mapbox.mapboxsdk.annotations.PolygonOptions;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.constants.Style;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
@@ -41,7 +46,7 @@ import retrofit.Retrofit;
 
 
 public class MainMapActivity extends AppCompatActivity {
-    private MapView mapView = null;
+    private MapView mapView;
     private MapboxMap mMapBoxMap;
     private android.widget.Button btnSetMarker;
     private Context context;
@@ -54,15 +59,30 @@ public class MainMapActivity extends AppCompatActivity {
     LatLng point3 = new LatLng(22.3092947, 73.1752446);
     private Button btnSetRoute;
     private DirectionsRoute currentRoute;
+    private Button btnGetMyLocation;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this);
         context = this;
+
+        FunctionHelper.askForPermission(context, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+
+            }
+
+            @Override
+            public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+                return;
+            }
+        });
         Mapbox.getInstance(this, getString(R.string.com_mapbox_mapboxsdk_accessToken));
         init(savedInstanceState);
         initListeners();
+
+
     }
 
     private void initListeners() {
@@ -76,7 +96,6 @@ public class MainMapActivity extends AppCompatActivity {
         btnSetPolyLine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
                 settingPolyLineDemo();
             }
@@ -106,6 +125,16 @@ public class MainMapActivity extends AppCompatActivity {
                 }
             });
         }
+
+        btnGetMyLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Setup UserLocation monitoring
+                if (mMapBoxMap.getMyLocation() != null) {
+                    getDeviceLocation();
+                }
+            }
+        });
     }
 
     private void checkOffRoute(Waypoint target) {
@@ -222,6 +251,7 @@ public class MainMapActivity extends AppCompatActivity {
 
     private void init(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main_map);
+        this.btnGetMyLocation = (Button) findViewById(R.id.btnGetMyLocation);
         this.btnSetRoute = (Button) findViewById(R.id.btnSetRoute);
         this.btnSetPolygon = (Button) findViewById(R.id.btnSetPolygon);
         this.btnSetPolyLine = (Button) findViewById(R.id.btnSetPolyLine);
@@ -231,24 +261,40 @@ public class MainMapActivity extends AppCompatActivity {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
-                mapboxMap.setStyle(Style.LIGHT);
+                mapboxMap.setStyle(Style.SATELLITE_STREETS);
                 // One way to add a marker view
                 /*
                     if you want to init your marker at the starting itself you can call it from here,
                     that is after you get mapBoxMap object
                 */
                 mMapBoxMap = mapboxMap;
-                mapboxMap.addMarker(new MarkerViewOptions()
+               /* mapboxMap.addMarker(new MarkerViewOptions()
                         .position(new LatLng(22.3099771, 73.1754511))
                         .title("Webmyne")
                         .snippet("This is where I am working!")
-                );
+                );*/
+
+                getDeviceLocation();
+
             }
         });
 
 //        addMapMarker(new LatLng(22.3093816, 73.1755584));
 
 
+    }
+
+    private void getDeviceLocation() {
+        mMapBoxMap.setMyLocationEnabled(true);
+        if (mMapBoxMap.getMyLocation() != null) {
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+                    .target(new LatLng(mMapBoxMap.getMyLocation()))      // Sets the center of the map to Mountain View
+                    .zoom(17)                   // Sets the zoom
+                    .bearing(90)                // Sets the orientation of the camera to east
+                    .tilt(30)                   // Sets the tilt of the camera to 30 degrees
+                    .build();
+            mMapBoxMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), 2000);
+        }
     }
 
     private void addMapMarker(LatLng latLng) {

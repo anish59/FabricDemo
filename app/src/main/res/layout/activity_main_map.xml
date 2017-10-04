@@ -10,13 +10,12 @@
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        mapbox:mapbox_cameraTargetLat="22.3099771"
-        mapbox:mapbox_cameraTargetLng="73.1754511"
-        mapbox:mapbox_cameraTilt="60"
-        mapbox:mapbox_cameraZoom="30"
         mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets" />
     <!--mapbox:mapbox_cameraTargetLat="41.885"
-        mapbox:mapbox_cameraTargetLng="-87.679"-->
+        mapbox:mapbox_cameraTargetLng="-87.679"
+    mapbox:mapbox_cameraTilt="30"
+    mapbox:mapbox_cameraZoom="20"-->
+
 
     <Button
         android:id="@+id/btnSetMarker"
@@ -35,8 +34,10 @@
         android:id="@+id/btnSetPolygon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/btnSetPolyLine"
-        android:text="@string/set_polyline" />
+        android:text="@string/set_polygon" />
 
     <Button
         android:id="@+id/btnSetRoute"
@@ -45,5 +46,14 @@
         android:layout_toEndOf="@id/btnSetMarker"
         android:layout_toRightOf="@id/btnSetMarker"
         android:text="@string/set_route" />
+
+    <Button
+        android:id="@+id/btnGetMyLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSetRoute"
+        android:layout_toEndOf="@id/btnSetPolyLine"
+        android:layout_toRightOf="@id/btnSetPolyLine"
+        android:text="@string/my_location" />
 
 </RelativeLayout>
