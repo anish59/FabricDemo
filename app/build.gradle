@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
+        maven { url "http://oss.sonatype.org/content/repositories/snapshots/" }
     }
 
     dependencies {
@@ -71,11 +72,16 @@ dependencies {
     }
 
 
-    compile 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.6.0'
+    compile 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.6.1'
+    compile ('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.0') {
+        transitive = true
+    }
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.firebase:firebase-messaging:9.6.1'
     compile 'gun0912.ted:tedpermission:2.0.3'
+    compile 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.6.0-SNAPSHOT'
     testCompile 'junit:junit:4.12'
+
 }
 apply plugin: 'com.google.gms.google-services'

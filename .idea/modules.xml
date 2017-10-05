@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FabricDemo.iml" filepath="$PROJECT_DIR$/FabricDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libandroid-navigation/libandroid-navigation.iml" filepath="$PROJECT_DIR$/libandroid-navigation/libandroid-navigation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libandroid-navigation-ui/libandroid-navigation-ui.iml" filepath="$PROJECT_DIR$/libandroid-navigation-ui/libandroid-navigation-ui.iml" />
     </modules>
   </component>
 </project>

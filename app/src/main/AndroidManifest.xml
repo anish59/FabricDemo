@@ -46,14 +46,16 @@
         </activity>
         <activity android:name=".ItemViewActivity" />
         <activity android:name=".mapDemo.MainMapActivity">
+
+        </activity>
+        <activity android:name=".optimizelyDemo.OptDemoActivity"/>
+        <activity android:name=".mapDemo.MapBoxNavigationDemo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".optimizelyDemo.OptDemoActivity"></activity>
-        <activity android:name=".mapDemo.MapBoxNavigationDemo"></activity>
     </application>
 
 </manifest>
