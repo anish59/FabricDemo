@@ -40,7 +40,7 @@ public class MapBoxNavigationDemo extends AppCompatActivity {
     LatLng point1 = new LatLng(22.3099771, 73.1754511);
     LatLng point2 = new LatLng(22.3089299, 73.1753277);
     LatLng point3 = new LatLng(22.3092947, 73.1752446);
-    private NavigationMapRoute navigationMapRoute;
+//    private NavigationMapRoute navigationMapRoute;
 
 
 

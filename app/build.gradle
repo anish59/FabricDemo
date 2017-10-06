@@ -73,9 +73,9 @@ dependencies {
 
 
     compile 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.6.1'
-    compile ('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.0') {
+    /*compile ('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.0') {
         transitive = true
-    }
+    }*/
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.firebase:firebase-messaging:9.6.1'
